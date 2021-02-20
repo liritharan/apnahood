@@ -1,3 +1,4 @@
+import 'package:apnahood/Screen/post_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:apnahood/model/search_query.dart';
 import 'package:apnahood/service/api.dart';
@@ -107,7 +108,10 @@ class DataSearch extends SearchDelegate<String> {
               ],
             ),
             onTap: () {
-
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => PostDetails(
+                    postId: '${data.hits[index].objectID}',
+                  )));
             },
           ),
         );
